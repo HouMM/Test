@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<title>教务系统</title>
+<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" title="" rel="stylesheet" />
+<link title="" href="css/style.css" rel="stylesheet" type="text/css"  />
+<link title="blue" href="css/dermadefault.css" rel="stylesheet" type="text/css"/>
+<link title="green" href="css/dermagreen.css" rel="stylesheet" type="text/css" disabled="disabled"/>
+<link title="orange" href="css/dermaorange.css" rel="stylesheet" type="text/css" disabled="disabled"/>
+<link href="css/templatecss.css" rel="stylesheet" title="" type="text/css" />
+<link rel="stylesheet" href="css/combo.select.css">
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="script/jquery.cookie.js" type="text/javascript"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+ 
+ 
+<nav class="nav navbar-default navbar-mystyle navbar-fixed-top">
+  <div class="navbar-header">
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
+     <span class="icon-bar"></span> 
+     <span class="icon-bar"></span> 
+     <span class="icon-bar"></span> 
+    </button>
+    <a class="navbar-brand mystyle-brand"><span class="glyphicon glyphicon-home"></span></a> </div>
+
+
+  <div class="collapse navbar-collapse">
+
+    <ul class="nav navbar-nav">
+      <li class="li-border"><a class="mystyle-color" href="#">教务系统</a></li>
+    </ul>
+    
+
+  </div>
+
+</nav>
+
+
+
+<div class="down-main">
+  <div class="left-main left-off">
+    <div class="sidebar-fold"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+<div class="subNavBox">
+
+      <!--首页 -->
+      <div class="sBox">
+        <div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">首页</span></div>
+        <ul class="navContent" style="display:none">
+          <li>
+            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />首页</div>
+            <a href="index.html"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a></li>
+          
+        </ul>
+   
+      </div>
+     <!--用户中心-->
+      <div class="sBox">
+       <div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">教务安排</span>
+        </div>
+       <ul class="navContent" style="display:block">
+          <li class="active">
+            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />课程检索</div>
+            <a href="lesson_check.html"><span class="sublist-icon glyphicon glyphicon-list-alt"></span><span class="sub-title">课程检索</span></a> </li>
+          <li>
+            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />教师检索</div>
+            <a href="teacher_check.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">教师检索</span></a> </li>
+          <li>
+            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />教室检索</div>
+            <a href="classroom_check.html"><span class="sublist-icon glyphicon glyphicon-bell"></span><span class="sub-title">教室检索</span></a></li>
+          <li>
+            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />班级检索</div>
+            <a href="class_check.html"><span class="sublist-icon glyphicon glyphicon-book"></span><span class="sub-title">班级检索</span></a></li>
+        </ul>
+      </div>
+
+      <!-- 关于我们 -->
+      <div class="sBox">
+        <div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">关于我们</span></div>
+        <ul class="navContent" style="display:none">
+          <li>
+            <div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />添加新闻</div>
+            <a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">添加新闻</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="right-product view-product right-off">
+     <!-- 内容页  -->
+     <header class="show_header" style="padding: 1em 190px 1em;letter-spacing: -1px;text-align: center;background: #C8DBEA;">
+    <h1>教师课表</h1> 
+    <div align="center" style="margin-top: 30px">
+    <form method="get" class="demo-form">
+    <table id="table_checklessons" align="center" width="100%" >
+      <tr>
+      <td width="20%"></td>
+        <td width="100px">学年学期:</td>
+        <td width="180dx">
+      <select class="semester-select" style="height: 30px ">
+        <option id="firstSemester">2016-2017学年第一学期</option>
+        <option id="secondSemester">2016-2017学年第二学期</option> 
+      </select></td>
+      <td width="15%"></td>
+        <td width="100px" style="padding-right: 0px">教&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 师:</td>
+        <td >
+      <select id="teacher_select" class="teacher-select" style="height:30px;width:150px" onchange="selected()">
+        <option value="">请输入老师姓名</option>   
+      </select></td>
+
+        <td></td>
+      </tr>
+      <tr>
+        <td>&nbsp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+      <td></td>
+        <td> <input type="radio" name="type" class="checked-focus"  checked="true" />样式一</td>
+        <td><input type="radio" name="type" class="checked-focus"/> 样式二</td>
+        <td></td>
+        <td>验证码：</td>
+          <td colspan="2"><img src="/IntegrateDemo/get_teimage"> &nbsp&nbsp<input style="width:100px" id="validate_text" type="text"  ></td>
+
+        <td>
+          <button type="button" class="btn btn-primary" onclick="check()">检索</button>
+        </td>
+      </tr>
+    </table>
+    </form>
+</div>
+  </header>
+  <div align="center" style="width: 86%;margin-left: 10%">
+      <table style="margin-top:20px" width="100%">
+        <tr>
+        <td><p id="header"></p></td>
+        </tr>
+      </table>
+      <table id = "table_lessons" class="table table-bordered table-responsive" style="margin-top: 5px;display:none">
+
+          <tr class="info"><th colspan="2" width="6%"></th><th width="13.5%" style="vertical-align:middle;text-align:center">星期一</th><th width="13.5%" style="vertical-align:middle;text-align:center">星期二</th><th width="13%" style="vertical-align:middle;text-align:center">星期三</th>
+          <th width="13%" style="vertical-align:middle;text-align:center">星期四</th><th width="13%" style="vertical-align:middle;text-align:center">星期五</th><th width="13%" style="vertical-align:middle;text-align:center">星期六</th><th style="vertical-align:middle;text-align:center">星期日</th></tr>
+
+          <tr><td bgcolor="#E3EAF0" rowspan="2" style="vertical-align:middle;text-align:center">上 <br><br>午</td>
+          <td bgcolor="#BEE2F4" style="vertical-align:middle;text-align:center">一</td>
+          <td><p id="fill11"></p></td>
+          <td><p id="fill12"></p></td>
+          <td><p id="fill13"></p></td>
+          <td><p id="fill14"></p></td>
+          <td><p id="fill15"></p></td>
+          <td><p id="fill16"></p></td>
+          <td><p id="fill17"></p></td></tr>
+
+          <tr>
+          <td width="22px" bgcolor="#BEE2F4" style="vertical-align:middle;text-align:center">二</td>
+         <td><p id="fill21"></p></td>
+          <td><p id="fill22"></p></td>
+          <td><p id="fill23"></p></td>
+          <td><p id="fill24"></p></td>
+          <td><p id="fill25"></p></td>
+          <td><p id="fill26"></p></td>
+          <td><p id="fill27"></p></td></tr>
+
+
+         <tr><td bgcolor="#E3EAF0" rowspan="2" style="vertical-align:middle;text-align:center">下 <br><br>午</td><td bgcolor="#BEE2F4" style="vertical-align:middle;text-align:center">三</td>
+         <td><p id="fill31"></p></td>
+          <td><p id="fill32"></p></td>
+          <td><p id="fill33"></p></td>
+          <td><p id="fill34"></p></td>
+          <td><p id="fill35"></p></td>
+          <td><p id="fill36"></p></td>
+          <td><p id="fill37"></p></td>
+         </tr>
+         <tr><td bgcolor="#BEE2F4" style="vertical-align:middle;text-align:center">四</td>
+         <td><p id="fill41"></p></td>
+          <td><p id="fill42"></p></td>
+          <td><p id="fill43"></p></td>
+          <td><p id="fill44"></p></td>
+          <td><p id="fill45"></p></td>
+          <td><p id="fill46"></p></td>
+          <td><p id="fill47"></p></td>
+         </tr>
+         <tr><td bgcolor="#E3EAF0" rowspan="2" style="vertical-align:middle;text-align:center">晚 <br><br>上</td><td bgcolor="#BEE2F4" style="vertical-align:middle;text-align:center">五</td>
+        <td><p id="fill51"></p></td>
+          <td><p id="fill52"></p></td>
+          <td><p id="fill53"></p></td>
+          <td><p id="fill54"></p></td>
+          <td><p id="fill55"></p></td>
+          <td><p id="fill56"></p></td>
+          <td><p id="fill57"></p></td>
+         </tr>
+
+        <tr><td bgcolor="#BEE2F4" style="vertical-align:middle;text-align:center">六</td>
+       <td><p id="fill61"></p></td>
+          <td><p id="fill62"></p></td>
+          <td><p id="fill63"></p></td>
+          <td><p id="fill64"></p></td>
+          <td><p id="fill65"></p></td>
+          <td><p id="fill66"></p></td>
+          <td><p id="fill67"></p></td>
+        </tr>
+      </table>
+</div>
+  
+  <script src="script/jquery-1.11.0.min.js" type="text/javascript"></script>
+  <script>window.jQuery || document.write('<script src="script/jquery-1.11.0.min.js"><\/script>')</script>
+
+ 
+<script type="text/javascript">
+
+//下拉列表选择的课程
+var select_teacher;
+function selected(){
+ select_teacher =$('#teacher_select option:selected') .val();
+ select_teacher_name = $('#teacher_select option:selected') .text();
+}
+
+//检索点击事件触发
+ function check(){
+ var validate = document.getElementById("validate_text").value;
+
+ //发送请求
+	var setting = {url:"/IntegrateDemo/get_teacherRealInfo",type:"GET",data:{teacherId:select_teacher,identifycode:validate}};
+	$.ajax(setting).done(function(res){
+		
+		if (res.length == 0) {
+			alert(select_teacher_name + "老师没有课程！");
+		}else {
+			
+			for(var j=0;j<res.length;j++){
+				
+				var class_detail = eval("("+res[j].class_info+")");
+				var class_num = class_detail.id;
+				var strs = new Array();
+				strs = class_num.split("-");
+				var  test = "fill" +strs[0]+strs[1];
+				document.getElementById(test).innerHTML = class_detail.teacherClass;
+				
+				// 显示
+				setTimeout(show,1000);
+				  function show(){
+					  var title = eval("("+res[0].title_info+")");
+						//alert(title.classDetail);
+						document.getElementById("header").innerHTML = title.teacherClassDetail;
+				var nam=document.getElementById("table_lessons").style.display;
+					if(nam=='none'){
+						document.getElementById("table_lessons").style.display='block';
+					}
+				  } 
+
+			}
+		}
+		
+		
+	});
+} 
+$(function(){	
+	var setting1 = {type:"GET",url:"/IntegrateDemo/get_TeacherInfo"};
+	$.ajax(setting1).done(function(res){
+		for(var i=0;i<res.length;i++){
+			  $("#teacher_select").append("<option value='"+res[i].teacher_id+"'>"+res[i].name+"</option>");
+
+		}
+	});
+	
+	
+
+
+ 
+/*左侧导航栏显示隐藏功能*/
+$(".subNav").click(function(){        
+      /*显示*/
+      if($(this).find("span:first-child").attr('class')=="title-icon glyphicon glyphicon-chevron-down")
+      {
+        $(this).find("span:first-child").removeClass("glyphicon-chevron-down");
+          $(this).find("span:first-child").addClass("glyphicon-chevron-up");
+          $(this).removeClass("sublist-down");
+        $(this).addClass("sublist-up");
+      }
+      /*隐藏*/
+      else
+      {
+        $(this).find("span:first-child").removeClass("glyphicon-chevron-up");
+        $(this).find("span:first-child").addClass("glyphicon-chevron-down");
+        $(this).removeClass("sublist-up");
+        $(this).addClass("sublist-down");
+      } 
+    // 修改数字控制速度， slideUp(500)控制卷起速度
+      $(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(300);
+  })
+/*左侧导航栏缩进功能*/
+$(".left-main .sidebar-fold").click(function(){
+
+  if($(this).parent().attr('class')=="left-main left-full")
+  {
+    $(this).parent().removeClass("left-full");
+    $(this).parent().addClass("left-off");
+    
+    $(this).parent().parent().find(".right-product").removeClass("right-full");
+    $(this).parent().parent().find(".right-product").addClass("right-off");
+    
+    
+    }
+  else
+  {
+    $(this).parent().removeClass("left-off");
+    $(this).parent().addClass("left-full");
+    
+    $(this).parent().parent().find(".right-product").removeClass("right-off");
+    $(this).parent().parent().find(".right-product").addClass("right-full");
+    
+    
+    }
+  })  
+ 
+  /*左侧鼠标移入提示功能*/
+    $(".sBox ul li").mouseenter(function(){
+      if($(this).find("span:last-child").css("display")=="none")
+      {$(this).find("div").show();}
+      }).mouseleave(function(){$(this).find("div").hide();})  
+})
+</script>
+</body>
+</html>
